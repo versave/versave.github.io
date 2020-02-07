@@ -1,0 +1,14 @@
+.logo {
+    display: inline-block;
+    padding: 5px;
+    border: 2px solid $red;
+    font-family: $cairo;
+    font-size: 30px;
+    color: $red;
+    text-decoration: none;
+
+    &:hover {
+        background: $red;
+        color: $black;
+    }
+}

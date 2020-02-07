@@ -3,8 +3,8 @@
 \* ------------------------------------------------------------ */
 body {
 	min-width: 320px;
-	background: $white;
-	font-family: $sans;
+	background: $black;
+	font-family: $mont;
 	font-size: $font-size-base;
 	line-height: $line-height-base;
 	color: $black;
@@ -27,12 +27,14 @@ h3,
 h4,
 h5,
 h6 {
-	margin-bottom: calc(#{line-height-base}em / 2);
+	margin-bottom: 20px;
+	font-family: $cairo;
 	line-height: 1.2;
+	font-weight: 400;
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 50px;
 }
 
 h2 {

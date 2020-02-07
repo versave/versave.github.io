@@ -1,42 +1,32 @@
 .btn,
 button {
+    position: relative;
+    overflow: hidden;
     display: inline-block;
-    padding: 10px 30px;
-    border: 0;
+    padding: 10px 40px;
+    border: 2px solid $red;
     border-radius: 30px;
-    background: $green;
     font-size: 14px;
-    color: $white;
+    color: #fff;
     text-align: center;
     text-decoration: none;
     transition: .3s;
 
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -5;
+        background: $red;
+        transition: top .3s;
+    }
+
     &:hover {
-        background: #5c6959;
-    }
-
-    &--blue {
-        background: $light-blue;
-
-        &:hover {
-            background: #7fa7c1;
-        }
-    }
-
-    &--white {
-        background: $white;
-        color: #000;
-
-        &:hover {
-            background: #d4d4d4;
-        }
-    }
-
-    &--red {
-        background: #985151;
-
-        &:hover {
-            background: #6d3c3c;
+        &:after {
+            top: 0;
         }
     }
 }
