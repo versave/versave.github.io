@@ -1,4 +1,10 @@
+@keyframes animate-in {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
 .logo {
+    transform: translateY(-100%);
     display: inline-block;
     padding: 5px;
     border: 2px solid $red;
@@ -6,6 +12,10 @@
     font-size: 30px;
     color: $red;
     text-decoration: none;
+    opacity: 0;
+    animation: animate-in .5s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
 
     &:hover {
         background: $red;

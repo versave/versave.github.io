@@ -6,7 +6,7 @@ button {
     padding: 10px 40px;
     border: 2px solid $red;
     border-radius: 30px;
-    font-size: 14px;
+    font-size: 16px;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -19,7 +19,6 @@ button {
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: -5;
         background: $red;
         transition: top .3s;
     }
@@ -27,6 +26,72 @@ button {
     &:hover {
         &:after {
             top: 0;
+        }
+    }
+
+    span {
+        position: relative;
+        z-index: 5;
+    }
+
+    i {
+        position: relative;
+        left: -10px;
+        font-size: 16px;
+    }
+
+    &--white {
+        border-color: #fff;
+        color: $black;
+
+        &:after {
+            top: 0;
+            background: #ffffff;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &:after {
+                top: 100%;
+            }
+        }
+    }
+
+    &--white-reverse {
+        border-color: $black;
+        background: $black;
+    }
+
+    &--black {
+        border-color: $black;
+        color: #fff;
+
+        &:after {
+            top: 0;
+            background: $black;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &:after {
+                top: 100%;
+            }
+        }
+    }
+
+    &--black-reverse {
+        &:hover {
+            color: $black;
+        }
+    }
+
+    &--red-text {
+        color: $red;
+
+        &:hover {
+            color: #fff;
         }
     }
 }

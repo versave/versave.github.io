@@ -1,0 +1,25 @@
+.footer {
+    padding: 30px 0;
+    background: $dark-red;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+    a {
+        font-size: 40px;
+        color: #ffffff;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}

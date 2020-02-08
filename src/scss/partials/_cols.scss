@@ -4,12 +4,23 @@
     margin: -35px -10px 0;
 
     .col {
-        flex: 0 1 auto;
+        flex: 0 1 100%;
+        max-width: 100%;
         padding: 35px 10px 0;
 
         &--1of2 {
             flex: 0 1 50%;
             max-width: 50%;
+        }
+
+        &--1of3 {
+            flex: 0 1 33.33%;
+            max-width: 33.33%;
+        }
+
+        &--1of4 {
+            flex: 0 1 25%;
+            max-width: 25%;
         }
 
         @include breakpoint-mobile-portrait {

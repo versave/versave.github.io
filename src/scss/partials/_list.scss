@@ -1,0 +1,21 @@
+.list-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+
+    li {
+        padding: 50px 20px 0;
+        flex: 0 1 12.5%;
+        max-width: 12.5%;
+    }
+
+    a {
+        display: block;
+
+        &:hover {
+            transform: translateY(-10px) scale(1.1);
+        }
+    }
+}

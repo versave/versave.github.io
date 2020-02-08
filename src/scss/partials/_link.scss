@@ -1,0 +1,23 @@
+.link {
+    position: relative;
+    display: inline;
+    font-style: italic;
+    text-decoration: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 20%;
+        height: 2px;
+        background: $red;
+        transition: width .3s ease-out;
+    }
+
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}

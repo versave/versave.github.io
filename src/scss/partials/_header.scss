@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+    transition: padding .3s linear;
 
     &:after {
         content: '';
@@ -18,7 +19,7 @@
         bottom: 0;
         z-index: -10;
         background: $black;
-        opacity: 0.8;
+        opacity: 0.9;
         transition: top .3s linear, box-shadow .3s linear;
     }
 
@@ -29,6 +30,9 @@
     }
     
     &.scrolled {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
         .btn {
             transform: translateY(0);
             opacity: 1;
