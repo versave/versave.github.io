@@ -70,11 +70,13 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_canvas_animation__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_easing__ = __webpack_require__(2);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 var canvas = document.getElementById('canvas');
@@ -90,6 +92,7 @@ function () {
     new __WEBPACK_IMPORTED_MODULE_0__modules_canvas_animation__["a" /* default */](canvas);
     this.jsClass(document.querySelectorAll('.js-class'));
     this.detectScroll();
+    this.scrollToEvent(this.$select('.js-scrollspy', true));
   }
 
   _createClass(App, [{
@@ -145,6 +148,45 @@ function () {
         return document.querySelectorAll(selector);
       } else {
         return document.querySelector(selector);
+      }
+    }
+  }, {
+    key: "scrollTo",
+    value: function scrollTo(to) {
+      if (window.scrollY == to) {
+        return;
+      }
+
+      var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
+      var start = window.scrollY || window.pageYOffset;
+      var time = Date.now();
+      var duration = Math.abs(start - to) / 5;
+
+      (function step() {
+        var dx = Math.min(1, (Date.now() - time) / duration);
+        var pos = start + (to - start) * __WEBPACK_IMPORTED_MODULE_1__modules_easing__["a" /* EasingFunctions */].easeOutQuart(dx);
+        window.scrollTo(0, pos);
+
+        if (dx < 1) {
+          requestAnimationFrame(step);
+        }
+      })();
+    }
+  }, {
+    key: "scrollToEvent",
+    value: function scrollToEvent($elements) {
+      var self = this;
+
+      for (var _i4 = 0; _i4 < $elements.length; _i4++) {
+        var $element = $elements[_i4];
+        $element.addEventListener('click', function (e) {
+          e.preventDefault();
+          var $el = this;
+          var targetEl = $el.dataset.target || $el.getAttribute('href');
+          var $target = document.querySelector(targetEl);
+          var offset = 93;
+          self.scrollTo($target.offsetTop - offset);
+        });
       }
     }
   }]);
@@ -258,6 +300,67 @@ function () {
 }();
 
 
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EasingFunctions; });
+var EasingFunctions = {
+  // no easing, no acceleration
+  linear: function linear(t) {
+    return t;
+  },
+  // accelerating from zero velocity
+  easeInQuad: function easeInQuad(t) {
+    return t * t;
+  },
+  // decelerating to zero velocity
+  easeOutQuad: function easeOutQuad(t) {
+    return t * (2 - t);
+  },
+  // acceleration until halfway, then deceleration
+  easeInOutQuad: function easeInOutQuad(t) {
+    return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  },
+  // accelerating from zero velocity 
+  easeInCubic: function easeInCubic(t) {
+    return t * t * t;
+  },
+  // decelerating to zero velocity 
+  easeOutCubic: function easeOutCubic(t) {
+    return --t * t * t + 1;
+  },
+  // acceleration until halfway, then deceleration 
+  easeInOutCubic: function easeInOutCubic(t) {
+    return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  },
+  // accelerating from zero velocity 
+  easeInQuart: function easeInQuart(t) {
+    return t * t * t * t;
+  },
+  // decelerating to zero velocity 
+  easeOutQuart: function easeOutQuart(t) {
+    return 1 - --t * t * t * t;
+  },
+  // acceleration until halfway, then deceleration
+  easeInOutQuart: function easeInOutQuart(t) {
+    return t < .5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+  },
+  // accelerating from zero velocity
+  easeInQuint: function easeInQuint(t) {
+    return t * t * t * t * t;
+  },
+  // decelerating to zero velocity
+  easeOutQuint: function easeOutQuint(t) {
+    return 1 + --t * t * t * t * t;
+  },
+  // acceleration until halfway, then deceleration 
+  easeInOutQuint: function easeInOutQuint(t) {
+    return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+  }
+};
 
 /***/ })
 /******/ ]);
