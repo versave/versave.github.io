@@ -15,7 +15,6 @@
     opacity: 0;
     animation: animate-in .5s ease-out;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
 
     @include breakpoint-mobile {
         font-size: 20px;

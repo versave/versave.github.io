@@ -214,14 +214,66 @@
     }
 
     .col {
+        @for $i from 1 to 5 {
+            &:nth-child(#{$i}) {
+                .widget {
+                    transition-delay: $i * .1s;
+                }
+            }
+        }
+
+        @for $i from 1 to 5 {
+            &:nth-child(#{$i + 4}) {
+                .widget {
+                    transition-delay: $i * .1s;
+                }
+            }
+        }
+
         @include breakpoint-small-desktop {
             flex: 0 1 33.33%;
             max-width: 33.33%;
+
+            @for $i from 1 to 3 {
+                &:nth-child(#{$i}) {
+                    .widget {
+                        transition-delay: $i * .1s;
+                    }
+                }
+            }
+    
+            @for $i from 1 to 3 {
+                &:nth-child(#{$i + 3}) {
+                    .widget {
+                        transition-delay: $i * .1s;
+                    }
+                }
+            }
+
+            @for $i from 1 to 3 {
+                &:nth-child(#{$i + 6}) {
+                    .widget {
+                        transition-delay: $i * .1s;
+                    }
+                }
+            }
         }
 
         @include breakpoint-tablet-portrait {
             flex: 0 1 50%;
             max-width: 50%;
+
+            &:nth-child(odd) {
+                .widget {
+                    transition-delay: .1s;
+                }
+            }
+
+            &:nth-child(even) {
+                .widget {
+                    transition-delay: .2s;
+                }
+            }
         }
 
         @include breakpoint-mobile {
@@ -231,6 +283,13 @@
         @include breakpoint-mobile-portrait {
             flex: 0 1 100%;
             max-width: 100%;
+
+            &:nth-child(odd),
+            &:nth-child(even) {
+                .widget {
+                    transition-delay: 0s;
+                }
+            }
         }
     }
 }

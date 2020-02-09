@@ -1,0 +1,59 @@
+.anim {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: transform .8s, opacity .8s;
+
+    @include breakpoint-mobile {
+        transition: transform .4s, opacity .4s;
+    }
+
+    &.animated {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.anim-left {
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: transform .8s, opacity .8s;
+
+    @include breakpoint-mobile {
+        transition: transform .4s, opacity .4s;
+    }
+
+    &.animated {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.anim-right {
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform .8s, opacity .8s;
+
+    @include breakpoint-mobile {
+        transition: transform .8s, opacity .8s;
+    }
+
+    &.animated {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.anim-scale {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform .8s, opacity .8s;
+
+    @include breakpoint-mobile {
+        transition: transform .8s, opacity .8s;
+    }
+
+    &.animated {
+        transform: scale(1);;
+        opacity: 1;
+    }
+}

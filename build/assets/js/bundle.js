@@ -88,8 +88,10 @@ window.addEventListener('resize', function () {
   canvas.height = window.outerHeight;
 });
 
-if (window.outerWidth < 768) {
+if (window.outerWidth < 768 && window.outerWidth > 480) {
   dots = 500;
+} else if (window.outerWidth < 480) {
+  dots = 250;
 }
 
 var App =
@@ -102,6 +104,7 @@ function () {
     this.jsClass(document.querySelectorAll('.js-class'));
     this.detectScroll();
     this.scrollToEvent(this.$select('.js-scrollspy', true));
+    this.scrollAnimations(this.$select('.animate', true));
   }
 
   _createClass(App, [{
@@ -137,7 +140,7 @@ function () {
       var _this = this;
 
       window.addEventListener('scroll', function () {
-        var scrollTop = window.scrollY;
+        var scrollTop = window.pageYOffset;
 
         if (scrollTop > 0) {
           _this.$select('.header').classList.add('scrolled');
@@ -198,6 +201,20 @@ function () {
           self.scrollTo($target.offsetTop - offset);
         });
       }
+    }
+  }, {
+    key: "scrollAnimations",
+    value: function scrollAnimations($items) {
+      window.addEventListener('scroll', function () {
+        for (var _i6 = 0; _i6 < $items.length; _i6++) {
+          var $item = $items[_i6];
+          var itemOffset = $item.getBoundingClientRect().top - window.outerHeight;
+
+          if (itemOffset < 0) {
+            $item.classList.add('animated');
+          }
+        }
+      });
     }
   }]);
 

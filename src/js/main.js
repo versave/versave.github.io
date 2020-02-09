@@ -12,8 +12,10 @@ window.addEventListener('resize', () => {
     canvas.height = window.outerHeight;
 });
 
-if(window.outerWidth < 768) {
+if(window.outerWidth < 768 && window.outerWidth > 480) {
     dots = 500;
+} else if(window.outerWidth < 480) {
+    dots = 250;
 }
 
 class App {
@@ -22,6 +24,7 @@ class App {
         this.jsClass(document.querySelectorAll('.js-class'));
         this.detectScroll();
         this.scrollToEvent(this.$select('.js-scrollspy', true));
+        this.scrollAnimations(this.$select('.animate', true));
     };
 
     jsClass($btns) {
@@ -50,9 +53,10 @@ class App {
 
     detectScroll() {
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
+            const scrollTop = window.pageYOffset;
             
             if(scrollTop > 0) {
+
                 this.$select('.header')
                     .classList
                     .add('scrolled');
@@ -119,6 +123,18 @@ class App {
                 self.scrollTo($target.offsetTop - offset);
             });
         }
+    }
+
+    scrollAnimations($items) {
+        window.addEventListener('scroll', () => {
+            for (const $item of $items) {
+                const itemOffset = $item.getBoundingClientRect().top - window.outerHeight;
+    
+                if(itemOffset < 0) {
+                    $item.classList.add('animated');
+                }
+            }
+        });
     }
 };
 
