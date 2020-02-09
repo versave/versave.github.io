@@ -5,10 +5,30 @@
     align-items: center;
     margin-top: -50px;
 
+    @include breakpoint-mobile-portrait {
+        margin-top: -30px;
+    }
+
     li {
         padding: 50px 20px 0;
         flex: 0 1 12.5%;
         max-width: 12.5%;
+
+        @include breakpoint-tablet-portrait {
+            flex: 0 1 20%;
+            max-width: 20%;
+        }
+
+        @include breakpoint-mobile {
+            flex: 0 1 25%;
+            max-width: 25%;
+        }
+
+        @include breakpoint-mobile-portrait {
+            flex: 33.33%;
+            max-width: 33.33%;
+            padding: 30px 15px 0;
+        }
     }
 
     a {

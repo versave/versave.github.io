@@ -31,6 +31,14 @@
         height: 100%;
         padding-bottom: 200px;
 
+        @include breakpoint-mobile {
+            padding-bottom: 100px;
+        }
+
+        @include breakpoint-mobile-portrait {
+            padding-bottom: 50px;
+        }
+
         h1 {
             position: relative;
             transform: translateX(-200vw);
@@ -41,6 +49,14 @@
             animation: float-in 3s;
             animation-fill-mode: forwards;
 
+            @include breakpoint-mobile {
+                border-width: 2px;
+                font-size: 30px;
+            }
+
+            @include breakpoint-mobile-portrait {
+                font-size: 25px;
+            }
 
             &:after {
                 content: '';
@@ -49,8 +65,12 @@
                 left: 100%;
                 transform: translateY(-50%);
                 width: 100vw;
-                height: 2px;
+                height: 3px;
                 background: $red;
+
+                @include breakpoint-mobile {
+                    height: 2px;
+                }
             }
         }
     }

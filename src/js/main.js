@@ -2,13 +2,23 @@ import canvasExplosion from './modules/canvas-animation';
 import { EasingFunctions } from './modules/easing';
 
 const canvas = document.getElementById('canvas');
+let dots = 1500;
 
 canvas.width = window.outerWidth;
 canvas.height = window.outerHeight;
 
+window.addEventListener('resize', () => {
+    canvas.width = window.outerWidth;
+    canvas.height = window.outerHeight;
+});
+
+if(window.outerWidth < 768) {
+    dots = 500;
+}
+
 class App {
     constructor() {
-        new canvasExplosion(canvas);
+        new canvasExplosion(canvas, dots);
         this.jsClass(document.querySelectorAll('.js-class'));
         this.detectScroll();
         this.scrollToEvent(this.$select('.js-scrollspy', true));
@@ -51,9 +61,9 @@ class App {
                     .classList
                     .remove('scrolled');
 
-                this.$select('.nav')
+                this.$select('.header')
                     .classList
-                    .remove('active');
+                    .remove('nav-open');
             }
         })
     };
@@ -105,6 +115,7 @@ class App {
                 const $target = document.querySelector(targetEl);
                 const offset = 93;
 
+                self.$select('.header').classList.remove('nav-open');
                 self.scrollTo($target.offsetTop - offset);
             });
         }

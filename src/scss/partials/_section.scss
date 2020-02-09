@@ -2,6 +2,19 @@
     position: relative;
     padding: 80px 0;
     background: $black;
+    
+    @include breakpoint-tablet-portrait {
+        padding-top: 60px;
+    }
+
+    @include breakpoint-mobile {
+        padding-top: 30px;
+    }
+
+    @include breakpoint-mobile-portrait {
+        padding-top: 20px;
+        padding-bottom: 60px;
+    }
 
     &:first-of-type {
         &:before {
@@ -19,6 +32,12 @@
         border-style: solid;
         border-width: 60px 0 0 60px;
         border-color: transparent transparent transparent $black;
+        margin-bottom: -1px;
+
+        @include breakpoint-mobile {
+            border-width: 40px 0 0 30px;
+            margin-bottom: -6px;
+        }
     }
 
     .shell {
@@ -26,35 +45,86 @@
             margin-bottom: 50px;
             font-size: 30px;
             color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 24px;
+            }
+
+            @include breakpoint-mobile-portrait {
+                font-size: 20px;
+            }
         }
     }
 
     &__head {
         margin-bottom: 80px;
+        
+        @include breakpoint-tablet-portrait {
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint-mobile {
+            margin-bottom: 40px;
+        }
+
+        @include breakpoint-mobile-portrait {
+            margin-bottom: 30px;
+        }
 
         h3 {
             color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 22px;
+            }
+
+            @include breakpoint-mobile-portrait {
+                font-size: 20px;
+            }
         }
     }
 
     &__title {
-        margin-bottom: 40px;
+        margin-bottom: 48px;
+
+        @include breakpoint-mobile {
+            margin-bottom: 35px;
+        }
+
+        @include breakpoint-mobile-portrait {
+            margin-bottom: 25px;
+        }
 
         h2 {
             position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
+            display: inline;
             font-size: 40px;
             color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 35px;
+            }
+
+            @include breakpoint-mobile-portrait {
+                font-size: 30px;
+            }
             
             &:after {
                 content: '';
                 position: absolute;
                 left: 0;
                 right: -10px;
-                bottom: 0;
+                bottom: 4px;
                 height: 4px;
                 border: 1px solid $bright-red;
+
+                @include breakpoint-mobile {
+                    bottom: 2px;
+                }
+
+                @include breakpoint-mobile-portrait {
+                    right: -5px;
+                }
             }
         }
     }
@@ -66,14 +136,21 @@
     &__body {
         h2 {
             font-size: 36px;
+
+            @include breakpoint-mobile-portrait {
+                margin-bottom: 15px;
+                font-size: 28px;
+            }
         }
     }
 
     &__actions {
         margin-top: 30px;
+        margin-bottom: -10px;
 
         .btn {
             margin-right: 20px;
+            margin-bottom: 10px;
         }
     }
 
@@ -117,6 +194,71 @@
             right: 0;
             transform: rotate(-90deg);
             border-color: transparent transparent transparent $dark-red;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\ 
+    Section Stack
+\* ------------------------------------------------------------ */
+
+.section-stack {
+    .cols {
+        @include breakpoint-small-desktop {
+            justify-content: center;
+        }
+
+        @include breakpoint-mobile {
+            margin: -10px -5px 0;
+        }
+    }
+
+    .col {
+        @include breakpoint-small-desktop {
+            flex: 0 1 33.33%;
+            max-width: 33.33%;
+        }
+
+        @include breakpoint-tablet-portrait {
+            flex: 0 1 50%;
+            max-width: 50%;
+        }
+
+        @include breakpoint-mobile {
+            padding: 10px 5px 0;
+        }
+
+        @include breakpoint-mobile-portrait {
+            flex: 0 1 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+/* ------------------------------------------------------------ *\ 
+    Section Work
+\* ------------------------------------------------------------ */
+
+.section-work {
+    .cols {
+        @include breakpoint-mobile {
+            margin: -15px -5px 0;
+        }
+    }
+
+    .col {
+        @include breakpoint-tablet-portrait {
+            flex: 0 1 50%;
+            max-width: 50%;
+
+            &:nth-child(3n) {
+                flex: 0 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        @include breakpoint-mobile {
+            padding: 15px 5px 0;
         }
     }
 }

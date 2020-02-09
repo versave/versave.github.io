@@ -17,6 +17,15 @@
     animation-fill-mode: forwards;
     animation-delay: 2s;
 
+    @include breakpoint-mobile {
+        font-size: 20px;
+    }
+
+    @include breakpoint-mobile-portrait {
+        border-width: 1px;
+        font-size: 15px;
+    }
+
     &:hover {
         background: $red;
         color: $black;

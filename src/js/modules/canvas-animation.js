@@ -1,9 +1,9 @@
 export default class canvasExplosion {
-	constructor(canvas) {
+	constructor(canvas, dots) {
 		this.canvas	 		= canvas;
 		this.ctx	 		= canvas.getContext('2d');
 		this.dotColors 		= ['#5b25a1', '#2fc63c', '#21cae0', '#e21b1b', '#c46d0f', '#fcf00f', '#ffffff', '#17d660', '#ffa0f2', '#2e35f4', '#000000', '#37f2f2', '#5176bc', '#e03ec8'];
-		this.maxDots 		= 1500;
+		this.maxDots 		= dots;
 		this.dots 			= [];
 		this.bounce 		= true;
 		this.maxVelocity    = 6;

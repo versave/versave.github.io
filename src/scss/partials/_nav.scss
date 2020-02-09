@@ -11,19 +11,22 @@
     opacity: 0.9;
     transition: transform .3s linear, box-shadow .3s linear;
 
-    &.active {
-        transform: translateX(0);
-        box-shadow: -1px 0 1px 1px $red;
+    @include breakpoint-mobile {
+        top: 75px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        padding: 30px 15px 15px 25px;
+        font-size: 16px;
+        opacity: 0.95;
 
-        li {
-            @for $i from 1 to 10 {
-                &:nth-child(#{$i}) {
-                    transition-delay: $i * .1s;
-                }
-            }
-
-            transform: translateX(0);
+        br {
+            display: none;
         }
+    }
+
+    @include breakpoint-mobile-portrait {
+        top: 66px;
     }
 
     ul {
@@ -37,6 +40,10 @@
             transform: translateX(200%);
             transition: transform .3s;
 
+            @include breakpoint-mobile {
+                margin-bottom: 20px;
+            }
+
             &:before {
                 content: '';
                 position: absolute;
@@ -46,6 +53,10 @@
                 bottom: 0;
                 background: $bright-red;
                 transition: left .3s;
+
+                @include breakpoint-mobile {
+                    left: -10px;
+                }
             }
 
             &:after {
@@ -60,6 +71,10 @@
 
             + li {
                 margin-top: 20px;
+
+                @include breakpoint-mobile {
+                    margin-top: 0;
+                }
             }
 
             &:hover:before {
@@ -75,6 +90,11 @@
             border-right: 2px solid $bright-red;
             color: #ffffff;
             text-decoration: none;
+
+            @include breakpoint-mobile {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
 
             &:before,
             &:after {

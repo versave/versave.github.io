@@ -12,16 +12,24 @@
 	<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-	<main>
+	<div class="wrapper">
 		<header id="header" class="header">
 			<a href="#header" class="logo js-scrollspy">
 				dev://vszhivkov
 			</a>
-
-			<a href="#" class="btn js-class" data-target=".nav" data-class="active">
+	
+			<a href="#" class="btn js-class hidden-xs" data-target=".header" data-class="nav-open">
 				<span>Navigate to</span>
 			</a>
-
+	
+			<a href="#" class="btn-menu js-class visible-xs" data-target=".header" data-class="nav-open">
+				<span></span>
+				
+				<span></span>
+				
+				<span></span>
+			</a>
+	
 			<nav class="nav">
 				<ul>
 					<li>
@@ -30,7 +38,7 @@
 							Me
 						</a>
 					</li>
-
+	
 					<li>
 						<a href="#stack" class="js-scrollspy">
 							Programming<br>
@@ -58,7 +66,7 @@
 							Development
 						</a>
 					</li>
-
+	
 					<li>
 						<a href="#libraries" class="js-scrollspy">
 							Libraries and<br>
@@ -68,677 +76,679 @@
 				</ul>
 			</nav>
 		</header>
-
-		<div class="intro">
-			<canvas id="canvas" width="auto" height="auto"></canvas>
-
-			<div class="intro__inner">
-				<div class="shell">
-					<div class="intro__entry">
-						<h1>
-							Vasil Zhivkov<br>
-							Developer
-						</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<section id="about" class="section section--white">
-			<div class="shell">
-				<div class="section__title">
-					<h2>About Me</h2>
-				</div>
-
-				<p> 
-					My path to programming started in my teens with a fat book about coding in C++ with examples, by Aleksey Vasilev, a russian author. Spurred by just a YouTube video about programming,
-					how it is the future and how you can make so many things with it, so I bought me that C++ book, since it was almost the only programming language I had ever heard of back then,
-					and since I didn't know that everything was on the web and a book wasn't really needed to get me going.
-				</p>
-
-				<p>
-					I started going along the basics and making some basic programs, like a currency and rent calculator over time about a game I was playing.
-					However, I wanted to visualize the stuff I made, and web development was a welcoming place to try, so I got into HTML, CSS and JavaScript.
-				</p>
-
-				<p>
-					My first job was as a Front-end developer and got me a solid 2 years of experience in making designs to pages for companies all over the world,
-					working on legacy code, responsive design, right-to-left page development, JS functionalities, and pixel perfect pages. But since then I've explored other fields,
-					like Node.js, Back-end, Full Stack, Game development and Desktop development.
-				</p>
-			</div>
-		</section>
-
-		<section id="stack" class="section">
-			<div class="shell">
-				<header class="section__head">
-					<div class="section__title">
-						<h2>Programming Stack</h2>
-					</div>
-				</header>
-
-				<div class="section__body">
-					<div class="cols">
-						<div class="col col--1of4">
-							<div class="widget">
-								<div class="widget__image">
-									<img src="assets/images/js.png">
-								</div>
 	
-								<div class="widget__content">
-									<h3>JavaScript</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>8/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>My main tool of usage</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col col--1of4">
-							<div class="widget widget--reverse">
-								<div class="widget__image">
-									<img src="assets/images/html.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>HTML</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>8/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>There is always that tag you didn't know about, but is super useful</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col col--1of4">
-							<div class="widget widget--left">
-								<div class="widget__image">
-									<img src="assets/images/css.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>CSS</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>8/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>There is always that great property which is barely supported</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col col--1of4">
-							<div class="widget widget--right">
-								<div class="widget__image">
-									<img src="assets/images/sass.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>SASS</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>7/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>I prefer writing my stylesheets in SASS, since it gives me more flexibility, works great with BEM, and has amazing features</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col col--1of4">
-							<div class="widget widget--reverse">
-								<div class="widget__image">
-									<img src="assets/images/nodejs.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>Node.js</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>6/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>Simple, easy, creates many possibilities</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col col--1of4">
-							<div class="widget">
-								<div class="widget__image">
-									<img src="assets/images/cpp.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>C++</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>5/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>Where it all began</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col col--1of4">
-							<div class="widget widget--top">
-								<div class="widget__image">
-									<img src="assets/images/csharp.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>C#</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>5/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>I mainly use it for Game Development</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col col--1of4">
-							<div class="widget widget--bottom">
-								<div class="widget__image">
-									<img src="assets/images/mongo.png">
-								</div>
-	
-								<div class="widget__content">
-									<h3>MongoDB</h3>
-	
-									<p>
-										Knowledge and experience:
-	
-										<strong>6/10</strong>
-									</p>
-								</div>
-	
-								<div class="widget__overlay">
-									<p>Just a database I like</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<main class="main">
+			<div class="intro">
+				<canvas id="canvas" width="auto" height="auto"></canvas>
 		
-		<section id="projects" class="section section--red">
-			<div class="shell">
-				<header class="section__head">
-					<div class="section__title">
-						<h2>Personal Projects</h2>
-					</div>
-				</header>
-
-				<div class="section__body">
-					<div class="project">
-						<div class="project__content">
-							<h3>
-								<strong>Title:</strong>
-								
-								Thrift Bay
-							</h3>
-
-							<h4>
-								<strong>Stack:</strong>
-								
-								MERN Stack with Redux and React-router
-							</h4>
-
-							<p>
-								<strong>Description:</strong>
-
-								A Full Stack CRUD website about selling personal goods.
-							</p>
-
-							<div class="project__actions">
-								<a href="http://thrift-bay-mern.herokuapp.com/" class="btn btn--white">
-									<span>
-										<i class="far fa-eye"></i>
-
-										Preview
-									</span>
-								</a>
-								
-								<a href="https://github.com/versave/thrift-bay-mern" class="btn btn--black">
-									<span>
-										<i class="fab fa-github"></i>
-
-											Repository
-									</span>
-								</a>
-							</div>
-						</div>
-
-						<div class="project__image">
-							<img src="assets/images/thrift-bay.jpg">
-						</div>
-					</div>
-
-					<div class="project project--reverse">
-						<div class="project__content">
-							<h3>
-								<strong>Title:</strong>
-								
-								JS Generator
-							</h3>
-
-							<h4>
-								<strong>Stack:</strong>
-								
-								Electron, Node.js
-							</h4>
-
-							<p>
-								<strong>Description:</strong>
-
-								JavaScript template creator. Combines selected methods into a .js file.
-							</p>
-
-							<div class="project__actions">
-								<a href="https://github.com/versave/js.generator" class="btn btn--black">
-									<span>
-										<i class="fab fa-github"></i>
-
-											Repository
-									</span>
-								</a>
-							</div>
-						</div>
-
-						<div class="project__image">
-							<img src="assets/images/jsgen.jpg">
-						</div>
-					</div>
-
-					<div class="project">
-						<div class="project__content">
-							<h3>
-								<strong>Title:</strong>
-								
-								HTML 5 Canvas particle explosion
-							</h3>
-
-							<h4>
-								<strong>Stack:</strong>
-								
-								JavaScript
-							</h4>
-
-							<p>
-								<strong>Description:</strong>
-
-								Canvas particle animation with bounce off.	
-							</p>
-
-							<div class="project__actions">
-								<a href="http://versave.github.io/" class="btn btn--white">
-									<span>
-										<i class="far fa-eye"></i>
-
-										Preview
-									</span>
-								</a>
-								
-								<a href="https://github.com/versave/versave.github.io/blob/master/src/js/modules/canvas-animation.js" class="btn btn--black">
-									<span>
-										<i class="fab fa-github"></i>
-
-											Repository
-									</span>
-								</a>
-							</div>
-						</div>
-
-						<div class="project__image">
-							<img src="assets/images/particles.jpg">
-						</div>
-					</div>
-
-					<div class="project project--reverse">
-						<div class="project__content">
-							<h3>
-								<strong>Title:</strong>
-								
-								Front-end Boilerplate
-							</h3>
-
-							<h4>
-								<strong>Stack:</strong>
-								
-								Gulp, Webpack, Babel, SASS, Autoprefixer
-							</h4>
-
-							<p>
-								<strong>Description:</strong>
-
-								Simple boilerplate for Front-end work.
-							</p>
-
-							<div class="project__actions">
-								<a href="https://github.com/versave/es6-web-boilerplate" class="btn btn--black">
-									<span>
-										<i class="fab fa-github"></i>
-
-											Repository
-									</span>
-								</a>
-							</div>
-						</div>
-
-						<div class="project__image">
-							<img src="assets/images/boilerplate.jpg">
+				<div class="intro__inner">
+					<div class="shell">
+						<div class="intro__entry">
+							<h1>
+								Vasil Zhivkov<br>
+								Developer
+							</h1>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-
-		<section id="work" class="section">
-			<div class="shell">
-				<header class="section__head">
+		
+			<section id="about" class="section section--white">
+				<div class="shell">
 					<div class="section__title">
-						<h2>Front-end Work</h2>
+						<h2>About Me</h2>
 					</div>
-
-					<h3>A few of the Front-end websites I have coded.</h3>
-				</header>
-
-				<div class="section__body">
-					<div class="cols">
-						<div class="col col--1of2">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website.jpg);"></figure>
-
-								<a href="https://www.qapartments.com/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of2">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-2.jpg);"></figure>
-
-								<a href="https://630.com.au/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-3.jpg);"></figure>
-
-								<a href="https://www.treeconstruction.ca/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of3">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-4.jpg);"></figure>
-
-								<a href="https://source.com/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of3">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-5.jpg);"></figure>
-
-								<a href="https://www.headfortarms.ie/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of3">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-6.jpg);"></figure>
-
-								<a href="https://mqff.com.au/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-7.jpg);"></figure>
-
-								<a href="https://contentark.com.au/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of2">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-8.jpg);"></figure>
-
-								<a href="https://www.wearevivid.org.au/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-
-						<div class="col col--1of2">
-							<div class="website">
-								<figure style="background-image: url(assets/images/website-9.jpg);"></figure>
-
-								<a href="https://www.ntcc.edu/">
-									<i class="far fa-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="gamedev" class="section section--white">
-			<div class="shell">
-				<header class="section__head">
-					<div class="section__title">
-						<h2>Game Development</h2>
-					</div>
-
-					<h3>A new field I'm exloring.</h3>
-				</header>
-	
-				<div class="section__body">
-					<div class="video">
-						<video src="assets/video/game.mp4" autoplay loop muted preload></video>
-					</div>
-
-					<h2>Zen Sphere</h2>
-
-					<p>A small collaborative project centered around the ability to focus. Made with Unity 3D.</p>
-
-					<p>
-						<strong>Art and design: </strong>
-
-						<a href="https://bozhidarhristovuk.wixsite.com/bozhidarhristov" class="link">Bozhidar Hristov</a>
+		
+					<p> 
+						My path to programming started in my teens with a fat book about coding in C++ with examples, by Aleksey Vasilev, a russian author. Spurred by just a YouTube video about programming,
+						how it is the future and how you can make so many things with it, so I bought me that C++ book, since it was almost the only programming language I had ever heard of back then,
+						and since I didn't know that everything was on the web and a book wasn't really needed to get me going.
 					</p>
-
-					<div class="section__actions">
-						<a href="https://www.dropbox.com/s/8h7u0rgyqpgwu97/Zen%20Sphere.zip?dl=0" class="btn btn--red-text">
-							<span>
-								<i class="far fa-eye"></i>
-	
-									Preview
-							</span>
-						</a>
-	
-						<a href="https://github.com/versave/sphere-unity-game" class="btn btn--black btn--black-reverse">
-							<span>
-								<i class="fab fa-github"></i>
-	
-									Repository
-							</span>
-						</a>
+		
+					<p>
+						I started going along the basics and making some basic programs, like a currency and rent calculator over time about a game I was playing.
+						However, I wanted to visualize the stuff I made, and web development was a welcoming place to try, so I got into HTML, CSS and JavaScript.
+					</p>
+		
+					<p>
+						My first job was as a Front-end developer and got me a solid 2 years of experience in making designs to pages for companies all over the world,
+						working on legacy code, responsive design, right-to-left page development, JS functionalities, and pixel perfect pages. But since then I've explored other fields,
+						like Node.js, Back-end, Full Stack, Game development and Desktop development.
+					</p>
+				</div>
+			</section>
+		
+			<section id="stack" class="section section-stack">
+				<div class="shell">
+					<header class="section__head">
+						<div class="section__title">
+							<h2>Programming Stack</h2>
+						</div>
+					</header>
+		
+					<div class="section__body">
+						<div class="cols">
+							<div class="col col--1of4">
+								<div class="widget">
+									<div class="widget__image">
+										<img src="assets/images/js.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>JavaScript</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>8/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>My main tool of usage</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col col--1of4">
+								<div class="widget widget--reverse">
+									<div class="widget__image">
+										<img src="assets/images/html.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>HTML</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>8/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>There is always that tag you didn't know about, but is super useful</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col col--1of4">
+								<div class="widget widget--left">
+									<div class="widget__image">
+										<img src="assets/images/css.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>CSS</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>8/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>There is always that great property which is barely supported</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col col--1of4">
+								<div class="widget widget--right">
+									<div class="widget__image">
+										<img src="assets/images/sass.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>SASS</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>7/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>I prefer writing my stylesheets in SASS, since it gives me more flexibility, works great with BEM, and has amazing features</p>
+									</div>
+								</div>
+							</div>
+		
+							<div class="col col--1of4">
+								<div class="widget widget--reverse">
+									<div class="widget__image">
+										<img src="assets/images/nodejs.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>Node.js</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>6/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>Simple, easy, creates many possibilities</p>
+									</div>
+								</div>
+							</div>
+		
+							<div class="col col--1of4">
+								<div class="widget">
+									<div class="widget__image">
+										<img src="assets/images/cpp.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>C++</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>5/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>Where it all began</p>
+									</div>
+								</div>
+							</div>
+		
+							<div class="col col--1of4">
+								<div class="widget widget--top">
+									<div class="widget__image">
+										<img src="assets/images/csharp.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>C#</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>5/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>I mainly use it for Game Development</p>
+									</div>
+								</div>
+							</div>
+		
+							<div class="col col--1of4">
+								<div class="widget widget--bottom">
+									<div class="widget__image">
+										<img src="assets/images/mongo.png">
+									</div>
+		
+									<div class="widget__content">
+										<h3>MongoDB</h3>
+		
+										<p>
+											Knowledge and experience:
+		
+											<strong>6/10</strong>
+										</p>
+									</div>
+		
+									<div class="widget__overlay">
+										<p>Just a database I like</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<section id="libraries" class="section">
-			<div class="shell">
-				<div class="section__title">
-					<h2>Libraries and Frameworks</h2>
+			</section>
+			
+			<section id="projects" class="section section--red">
+				<div class="shell">
+					<header class="section__head">
+						<div class="section__title">
+							<h2>Personal Projects</h2>
+						</div>
+					</header>
+		
+					<div class="section__body">
+						<div class="project">
+							<div class="project__content">
+								<h3>
+									<strong>Title:</strong>
+									
+									Thrift Bay
+								</h3>
+		
+								<h4>
+									<strong>Stack:</strong>
+									
+									MERN Stack with Redux and React-router
+								</h4>
+		
+								<p>
+									<strong>Description:</strong>
+		
+									A Full Stack CRUD website about selling personal goods.
+								</p>
+		
+								<div class="project__actions">
+									<a href="http://thrift-bay-mern.herokuapp.com/" class="btn btn--white">
+										<span>
+											<i class="far fa-eye"></i>
+		
+											Preview
+										</span>
+									</a>
+									
+									<a href="https://github.com/versave/thrift-bay-mern" class="btn btn--black">
+										<span>
+											<i class="fab fa-github"></i>
+		
+												Repository
+										</span>
+									</a>
+								</div>
+							</div>
+		
+							<div class="project__image" style="background-image: url(assets/images/thrift-bay.jpg);">
+								<img src="assets/images/thrift-bay.jpg">
+							</div>
+						</div>
+		
+						<div class="project project--reverse">
+							<div class="project__content">
+								<h3>
+									<strong>Title:</strong>
+									
+									JS Generator
+								</h3>
+		
+								<h4>
+									<strong>Stack:</strong>
+									
+									Electron, Node.js
+								</h4>
+		
+								<p>
+									<strong>Description:</strong>
+		
+									JavaScript template creator. Combines selected methods into a .js file.
+								</p>
+		
+								<div class="project__actions">
+									<a href="https://github.com/versave/js.generator" class="btn btn--black">
+										<span>
+											<i class="fab fa-github"></i>
+		
+												Repository
+										</span>
+									</a>
+								</div>
+							</div>
+		
+							<div class="project__image" style="background-image: url(assets/images/jsgen.jpg);">
+								<img src="assets/images/jsgen.jpg">
+							</div>
+						</div>
+		
+						<div class="project">
+							<div class="project__content">
+								<h3>
+									<strong>Title:</strong>
+									
+									HTML 5 Canvas particle explosion
+								</h3>
+		
+								<h4>
+									<strong>Stack:</strong>
+									
+									JavaScript
+								</h4>
+		
+								<p>
+									<strong>Description:</strong>
+		
+									Canvas particle animation with bounce off.	
+								</p>
+		
+								<div class="project__actions">
+									<a href="http://versave.github.io/" class="btn btn--white">
+										<span>
+											<i class="far fa-eye"></i>
+		
+											Preview
+										</span>
+									</a>
+									
+									<a href="https://github.com/versave/versave.github.io/blob/master/src/js/modules/canvas-animation.js" class="btn btn--black">
+										<span>
+											<i class="fab fa-github"></i>
+		
+												Repository
+										</span>
+									</a>
+								</div>
+							</div>
+		
+							<div class="project__image" style="background-image: url(assets/images/particles.jpg);">
+								<img src="assets/images/particles.jpg">
+							</div>
+						</div>
+		
+						<div class="project project--reverse">
+							<div class="project__content">
+								<h3>
+									<strong>Title:</strong>
+									
+									Front-end Boilerplate
+								</h3>
+		
+								<h4>
+									<strong>Stack:</strong>
+									
+									Gulp, Webpack, Babel, SASS, Autoprefixer
+								</h4>
+		
+								<p>
+									<strong>Description:</strong>
+		
+									Simple boilerplate for Front-end work.
+								</p>
+		
+								<div class="project__actions">
+									<a href="https://github.com/versave/es6-web-boilerplate" class="btn btn--black">
+										<span>
+											<i class="fab fa-github"></i>
+		
+												Repository
+										</span>
+									</a>
+								</div>
+							</div>
+		
+							<div class="project__image" style="background-image: url(assets/images/boilerplate.jpg);">
+								<img src="assets/images/boilerplate.jpg">
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<h3>Some of the libraries, frameworks, technologies and tools I have used.</h3>
-
-				<ul class="list-images">
-					<li>
-						<a href="https://reactjs.org/">
-							<img src="assets/images/react.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://redux.js.org/">
-							<img src="assets/images/redux.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://reacttraining.com/react-router/web/guides/quick-start">
-							<img src="assets/images/router.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://www.electronjs.org/">
-							<img src="assets/images/electron.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://d3js.org/">
-							<img src="assets/images/d3.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://gulpjs.com/">
-							<img src="assets/images/gulp.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://developers.google.com/maps/documentation">
-							<img src="assets/images/maps.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://webpack.js.org/">
-							<img src="assets/images/webpack.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://jquery.com/">
-							<img src="assets/images/jquery.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://kenwheeler.github.io/slick/">
-							<img src="assets/images/slick.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://www.chartjs.org/">
-							<img src="assets/images/chartjs.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://getbootstrap.com/">
-							<img src="assets/images/bootstrap.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://babeljs.io/">
-							<img src="assets/images/babel.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://alvarotrigo.com/fullPage/">
-							<img src="assets/images/fullpage.png" alt="">
-						</a>
-					</li>
-
-					<li>
-						<a href="https://jestjs.io/">
-							<img src="assets/images/jest.png" alt="">
-						</a>
-					</li>
-				</ul>
-			</div>
-		</section>
-
+			</section>
+		
+			<section id="work" class="section section-work">
+				<div class="shell">
+					<header class="section__head">
+						<div class="section__title">
+							<h2>Front-end Work</h2>
+						</div>
+		
+						<h3>A few of the Front-end websites I have coded.</h3>
+					</header>
+		
+					<div class="section__body">
+						<div class="cols">
+							<div class="col col--1of2">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website.jpg);"></figure>
+		
+									<a href="https://www.qapartments.com/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of2">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-2.jpg);"></figure>
+		
+									<a href="https://630.com.au/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-3.jpg);"></figure>
+		
+									<a href="https://www.treeconstruction.ca/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of3">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-4.jpg);"></figure>
+		
+									<a href="https://source.com/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of3">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-5.jpg);"></figure>
+		
+									<a href="https://www.headfortarms.ie/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of3">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-6.jpg);"></figure>
+		
+									<a href="https://mqff.com.au/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-7.jpg);"></figure>
+		
+									<a href="https://contentark.com.au/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of2">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-8.jpg);"></figure>
+		
+									<a href="https://www.wearevivid.org.au/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+		
+							<div class="col col--1of2">
+								<div class="website">
+									<figure style="background-image: url(assets/images/website-9.jpg);"></figure>
+		
+									<a href="https://www.ntcc.edu/">
+										<i class="far fa-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		
+			<section id="gamedev" class="section section--white">
+				<div class="shell">
+					<header class="section__head">
+						<div class="section__title">
+							<h2>Game Development</h2>
+						</div>
+		
+						<h3>A new field I'm exloring.</h3>
+					</header>
+		
+					<div class="section__body">
+						<div class="video">
+							<video src="assets/video/game.mp4" autoplay loop muted preload></video>
+						</div>
+		
+						<h2>Zen Sphere</h2>
+		
+						<p>A small collaborative project centered around the ability to focus. Made with Unity 3D.</p>
+		
+						<p>
+							<strong>Art and design: </strong>
+		
+							<a href="https://bozhidarhristovuk.wixsite.com/bozhidarhristov" class="link">Bozhidar Hristov</a>
+						</p>
+		
+						<div class="section__actions">
+							<a href="https://www.dropbox.com/s/8h7u0rgyqpgwu97/Zen%20Sphere.zip?dl=0" class="btn btn--red-text">
+								<span>
+									<i class="far fa-eye"></i>
+		
+										Preview
+								</span>
+							</a>
+		
+							<a href="https://github.com/versave/sphere-unity-game" class="btn btn--black btn--black-reverse">
+								<span>
+									<i class="fab fa-github"></i>
+		
+										Repository
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		
+			<section id="libraries" class="section">
+				<div class="shell">
+					<div class="section__title">
+						<h2>Libraries and Frameworks</h2>
+					</div>
+		
+					<h3>Some of the libraries, frameworks, technologies and tools I have used.</h3>
+		
+					<ul class="list-images">
+						<li>
+							<a href="https://reactjs.org/">
+								<img src="assets/images/react.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://redux.js.org/">
+								<img src="assets/images/redux.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://reacttraining.com/react-router/web/guides/quick-start">
+								<img src="assets/images/router.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://www.electronjs.org/">
+								<img src="assets/images/electron.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://d3js.org/">
+								<img src="assets/images/d3.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://gulpjs.com/">
+								<img src="assets/images/gulp.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://developers.google.com/maps/documentation">
+								<img src="assets/images/maps.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://webpack.js.org/">
+								<img src="assets/images/webpack.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://jquery.com/">
+								<img src="assets/images/jquery.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://kenwheeler.github.io/slick/">
+								<img src="assets/images/slick.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://www.chartjs.org/">
+								<img src="assets/images/chartjs.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://getbootstrap.com/">
+								<img src="assets/images/bootstrap.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://babeljs.io/">
+								<img src="assets/images/babel.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://alvarotrigo.com/fullPage/">
+								<img src="assets/images/fullpage.png" alt="">
+							</a>
+						</li>
+		
+						<li>
+							<a href="https://jestjs.io/">
+								<img src="assets/images/jest.png" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+	
 		<footer class="footer">
 			<div class="shell">
 				<div class="footer__inner">
 					<p>
 						&copy; 2020, Vasil Zhivkov
 					</p>
-
+	
 					<a href="https://github.com/versave">
 						<i class="fab fa-github"></i>
 					</a>
 				</div>
 			</div>
 		</footer>
-	</main>
+	</div>
 	
 	<script src="assets/js/bundle.js"></script>
 </body>

@@ -5,3 +5,17 @@
 .disabled {
 	pointer-events: none;
 }
+
+.visible-xs {
+	display: none !important;
+
+	@include breakpoint-mobile {
+		display: inline-block !important;
+	}
+}
+
+.hidden-xs {
+	@include breakpoint-mobile {
+		display: none !important;
+	}
+}

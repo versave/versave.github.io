@@ -10,6 +10,16 @@
     padding: 40px;
     transition: padding .3s linear;
 
+    @include breakpoint-large-desktop {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @include breakpoint-mobile {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
     &:after {
         content: '';
         position: absolute;
@@ -21,19 +31,31 @@
         background: $black;
         opacity: 0.9;
         transition: top .3s linear, box-shadow .3s linear;
+        
+        @include breakpoint-mobile {
+            opacity: 0.95;
+        }
     }
 
-    .btn {
+    .btn,
+    .btn-menu {
         transform: translateY(100%);
         opacity: 0;
         transition: transform .3s linear, opacity .3s linear;
     }
     
+    /*  Scrolled  */
     &.scrolled {
         padding-top: 20px;
         padding-bottom: 20px;
 
-        .btn {
+        @include breakpoint-mobile {
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+
+        .btn,
+        .btn-menu {
             transform: translateY(0);
             opacity: 1;
         }
@@ -41,6 +63,45 @@
         &:after {
             top: 0;
             box-shadow: 0 1px 1px 1px $red;
+        }
+    }
+
+    /*  Nav open  */
+    &.nav-open {
+        .nav {
+            transform: translateX(0);
+            box-shadow: -1px 0 1px 1px $red;
+
+            li {
+                @for $i from 1 to 10 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: $i * .1s;
+                    }
+                }
+
+                transform: translateX(0);
+            }
+        }
+
+        .btn-menu {
+            span {
+                &:nth-child(1) {
+                    top: 43%;
+                    transform: rotate(45deg);
+                }
+    
+                &:nth-child(2) {
+                    top: 13px;
+                    transform: rotate(45deg);
+                    width: 100%;
+                    opacity: 0;
+                }
+    
+                &:nth-child(3) {
+                    bottom: 45%;
+                    transform: rotate(-45deg);
+                }
+            }
         }
     }
 }

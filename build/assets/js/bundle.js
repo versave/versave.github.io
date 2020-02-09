@@ -80,8 +80,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var canvas = document.getElementById('canvas');
+var dots = 1500;
 canvas.width = window.outerWidth;
 canvas.height = window.outerHeight;
+window.addEventListener('resize', function () {
+  canvas.width = window.outerWidth;
+  canvas.height = window.outerHeight;
+});
+
+if (window.outerWidth < 768) {
+  dots = 500;
+}
 
 var App =
 /*#__PURE__*/
@@ -89,7 +98,7 @@ function () {
   function App() {
     _classCallCheck(this, App);
 
-    new __WEBPACK_IMPORTED_MODULE_0__modules_canvas_animation__["a" /* default */](canvas);
+    new __WEBPACK_IMPORTED_MODULE_0__modules_canvas_animation__["a" /* default */](canvas, dots);
     this.jsClass(document.querySelectorAll('.js-class'));
     this.detectScroll();
     this.scrollToEvent(this.$select('.js-scrollspy', true));
@@ -135,7 +144,7 @@ function () {
         } else {
           _this.$select('.header').classList.remove('scrolled');
 
-          _this.$select('.nav').classList.remove('active');
+          _this.$select('.header').classList.remove('nav-open');
         }
       });
     }
@@ -185,6 +194,7 @@ function () {
           var targetEl = $el.dataset.target || $el.getAttribute('href');
           var $target = document.querySelector(targetEl);
           var offset = 93;
+          self.$select('.header').classList.remove('nav-open');
           self.scrollTo($target.offsetTop - offset);
         });
       }
@@ -212,13 +222,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var canvasExplosion =
 /*#__PURE__*/
 function () {
-  function canvasExplosion(canvas) {
+  function canvasExplosion(canvas, dots) {
     _classCallCheck(this, canvasExplosion);
 
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.dotColors = ['#5b25a1', '#2fc63c', '#21cae0', '#e21b1b', '#c46d0f', '#fcf00f', '#ffffff', '#17d660', '#ffa0f2', '#2e35f4', '#000000', '#37f2f2', '#5176bc', '#e03ec8'];
-    this.maxDots = 1500;
+    this.maxDots = dots;
     this.dots = [];
     this.bounce = true;
     this.maxVelocity = 6;

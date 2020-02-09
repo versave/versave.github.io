@@ -3,6 +3,16 @@
     overflow: hidden;
     padding: 40px 20px;
     border: 3px solid $dark-red;
+    
+    @include breakpoint-tablet-portrait {
+        padding-bottom: 60px;
+    }
+
+    @include breakpoint-mobile {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 40px;
+    }
 
     &:before,
     &:after {
@@ -17,6 +27,10 @@
         border-width: 40px 0 0 40px;
         border-color: transparent transparent transparent $dark-red;
         transition: border-width .3s;
+
+        @include breakpoint-mobile {
+            border-width: 30px 0 0 30px;
+        }
     }
 
     &:after {
@@ -49,6 +63,16 @@
         height: 200px;
         margin: 0 auto 40px;
 
+        @include breakpoint-tablet-portrait {
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint-mobile {
+            max-width: 150px;
+            height: 150px;
+            margin-bottom: 40px;
+        }
+
         img {
             max-height: 100%;
         }
@@ -59,11 +83,20 @@
             margin-bottom: 15px;
             font-size: 28px;
             color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            @include breakpoint-mobile {
+                font-size: 16px;
+            }
         }
 
         strong {
             margin-left: 2px;
-            font-size: 18px;
         }
     }
 
@@ -82,6 +115,11 @@
         font-style: italic;
         text-align: center;
         opacity: 0;
+
+        @include breakpoint-mobile {
+            padding: 10px;
+            font-size: 16px;
+        }
     }
 
     &--reverse {
@@ -113,7 +151,11 @@
         &:hover {
             &:before,
             &:after {
-                border-width: 520px 0 0 520px;
+                border-width: 560px 0 0 560px;
+                
+                @include breakpoint-large-desktop {
+                    border-width: 580px 0 0 580px;
+                }
             }
         }
     }
@@ -134,7 +176,11 @@
         &:hover {
             &:before,
             &:after {
-                border-width: 520px 0 0 520px;
+                border-width: 560px 0 0 560px;
+
+                @include breakpoint-large-desktop {
+                    border-width: 580px 0 0 580px;
+                }
             }
         }
     }
@@ -156,7 +202,7 @@
         &:hover {
             &:before,
             &:after {
-                border-width: 545px 0 0 545px;
+                border-width: 620px 0 0 620px;
             }
         }
     }
@@ -181,7 +227,7 @@
         &:hover {
             &:before,
             &:after {
-                border-width: 545px 0 0 545px;
+                border-width: 620px 0 0 620px;
             }
         }
     }
