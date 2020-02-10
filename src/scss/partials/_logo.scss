@@ -17,12 +17,12 @@
     animation-fill-mode: forwards;
 
     @include breakpoint-mobile {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     @include breakpoint-mobile-portrait {
         border-width: 1px;
-        font-size: 15px;
+        font-size: 20px;
     }
 
     &:hover {

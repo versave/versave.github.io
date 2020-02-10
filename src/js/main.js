@@ -20,8 +20,6 @@ if(window.outerWidth < 768 && window.outerWidth > 480) {
 
 class App {
     constructor() {
-        new canvasExplosion(canvas, dots);
-        
         this.setLoaded();
         this.jsClass(document.querySelectorAll('.js-class'));
         this.detectScroll();
@@ -32,6 +30,8 @@ class App {
     setLoaded() {
         window.addEventListener('load', () => {
             this.$select('body').classList.remove('loading');
+
+            new canvasExplosion(canvas, dots);
         });
     }
 
