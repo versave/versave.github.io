@@ -20,16 +20,16 @@ button {
         content: '';
         position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
         background: $red;
         transition: top .3s;
     }
 
     &:hover {
         &:after {
-            top: 0;
+            top: -2px;
         }
     }
 
@@ -49,7 +49,7 @@ button {
         color: $black;
 
         &:after {
-            top: 0;
+            top: -2px;
             background: #ffffff;
         }
 
@@ -72,7 +72,7 @@ button {
         color: #fff;
 
         &:after {
-            top: 0;
+            top: -2px;
             background: $black;
         }
 
