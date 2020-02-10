@@ -17,6 +17,20 @@ body {
 		.load-overlay {
 			display: block;
 		}
+
+		.header {
+			.logo {
+				animation: none;
+			}
+		}
+
+		.intro {
+			.intro__entry {
+				h1 {
+					animation: none;
+				}
+			}
+		}
 	}
 }
 
