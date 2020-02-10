@@ -196,7 +196,7 @@ function () {
           var $el = this;
           var targetEl = $el.dataset.target || $el.getAttribute('href');
           var $target = document.querySelector(targetEl);
-          var offset = 93;
+          var offset = self.$select('.header').offsetHeight;
           self.$select('.header').classList.remove('nav-open');
           self.scrollTo($target.offsetTop - offset);
         });
@@ -205,7 +205,14 @@ function () {
   }, {
     key: "scrollAnimations",
     value: function scrollAnimations($items) {
+      window.addEventListener('load', function () {
+        iterateItems();
+      });
       window.addEventListener('scroll', function () {
+        iterateItems();
+      });
+
+      function iterateItems() {
         for (var _i6 = 0; _i6 < $items.length; _i6++) {
           var $item = $items[_i6];
           var itemOffset = $item.getBoundingClientRect().top - window.outerHeight;
@@ -214,7 +221,9 @@ function () {
             $item.classList.add('animated');
           }
         }
-      });
+      }
+
+      ;
     }
   }]);
 

@@ -788,6 +788,7 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(-100%);
     margin-left: auto;
     opacity: 0;
+    pointer-events: none;
     -webkit-transition: opacity .3s linear, -webkit-transform .3s linear;
     transition: opacity .3s linear, -webkit-transform .3s linear;
     transition: transform .3s linear, opacity .3s linear;
@@ -803,7 +804,8 @@ input[type=number]::-webkit-outer-spin-button {
     .header.scrolled .btn-menu {
       -webkit-transform: translateY(0);
       transform: translateY(0);
-      opacity: 1; }
+      opacity: 1;
+      pointer-events: auto; }
     .header.scrolled:after {
       bottom: 0;
       -webkit-box-shadow: 0 1px 1px 1px #950741;

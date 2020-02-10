@@ -117,7 +117,7 @@ class App {
                 const $el = this;
                 const targetEl = $el.dataset.target || $el.getAttribute('href');
                 const $target = document.querySelector(targetEl);
-                const offset = 93;
+                const offset = self.$select('.header').offsetHeight;
 
                 self.$select('.header').classList.remove('nav-open');
                 self.scrollTo($target.offsetTop - offset);
@@ -126,7 +126,15 @@ class App {
     }
 
     scrollAnimations($items) {
+        window.addEventListener('load', () => {
+            iterateItems();
+        });
+
         window.addEventListener('scroll', () => {
+           iterateItems();
+        });
+
+        function iterateItems() {
             for (const $item of $items) {
                 const itemOffset = $item.getBoundingClientRect().top - window.outerHeight;
     
@@ -134,7 +142,7 @@ class App {
                     $item.classList.add('animated');
                 }
             }
-        });
+        };
     }
 };
 
