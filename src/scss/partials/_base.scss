@@ -12,6 +12,12 @@ body {
 	@include breakpoint-mobile {
 		font-size: 16px;
 	}
+
+	&.loading {
+		.load-overlay {
+			display: block;
+		}
+	}
 }
 
 a {

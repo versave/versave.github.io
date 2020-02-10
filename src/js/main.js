@@ -21,11 +21,19 @@ if(window.outerWidth < 768 && window.outerWidth > 480) {
 class App {
     constructor() {
         new canvasExplosion(canvas, dots);
+        
+        this.setLoaded();
         this.jsClass(document.querySelectorAll('.js-class'));
         this.detectScroll();
         this.scrollToEvent(this.$select('.js-scrollspy', true));
         this.scrollAnimations(this.$select('.animate', true));
     };
+
+    setLoaded() {
+        window.addEventListener('load', () => {
+            this.$select('body').classList.remove('loading');
+        });
+    }
 
     jsClass($btns) {
         for (const btn of $btns) {

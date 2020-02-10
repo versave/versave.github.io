@@ -101,6 +101,7 @@ function () {
     _classCallCheck(this, App);
 
     new __WEBPACK_IMPORTED_MODULE_0__modules_canvas_animation__["a" /* default */](canvas, dots);
+    this.setLoaded();
     this.jsClass(document.querySelectorAll('.js-class'));
     this.detectScroll();
     this.scrollToEvent(this.$select('.js-scrollspy', true));
@@ -108,6 +109,15 @@ function () {
   }
 
   _createClass(App, [{
+    key: "setLoaded",
+    value: function setLoaded() {
+      var _this = this;
+
+      window.addEventListener('load', function () {
+        _this.$select('body').classList.remove('loading');
+      });
+    }
+  }, {
     key: "jsClass",
     value: function jsClass($btns) {
       for (var _i2 = 0; _i2 < $btns.length; _i2++) {
@@ -137,17 +147,17 @@ function () {
   }, {
     key: "detectScroll",
     value: function detectScroll() {
-      var _this = this;
+      var _this2 = this;
 
       window.addEventListener('scroll', function () {
         var scrollTop = window.pageYOffset;
 
         if (scrollTop > 0) {
-          _this.$select('.header').classList.add('scrolled');
+          _this2.$select('.header').classList.add('scrolled');
         } else {
-          _this.$select('.header').classList.remove('scrolled');
+          _this2.$select('.header').classList.remove('scrolled');
 
-          _this.$select('.header').classList.remove('nav-open');
+          _this2.$select('.header').classList.remove('nav-open');
         }
       });
     }
