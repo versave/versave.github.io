@@ -1,5 +1,5 @@
 # Portfolio Website
-Preview: http://thrift-bay-mern.herokuapp.com/
+Preview: https://versave.github.io/
 
 
 
