@@ -1,7 +1,7 @@
 .widget {
     position: relative;
     overflow: hidden;
-    padding: 40px 20px;
+    padding: 60px 20px 34px;
     border: 3px solid $dark-red;
     
     @include breakpoint-tablet-portrait {
@@ -66,7 +66,7 @@
         align-items: center;
         max-width: 200px;
         height: 200px;
-        margin: 0 auto 40px;
+        margin: 0 auto 50px;
 
         @include breakpoint-tablet-portrait {
             margin-bottom: 60px;
@@ -87,7 +87,7 @@
     &__content {
         h3 {
             margin-bottom: 15px;
-            font-size: 28px;
+            font-size: 30px;
             color: #ffffff;
 
             @include breakpoint-mobile {
