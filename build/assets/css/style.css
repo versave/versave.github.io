@@ -384,6 +384,22 @@ button {
     .btn--red-text:hover,
     button--red-text:hover {
       color: #fff; }
+  .btn--red,
+  button--red {
+    border-color: #950741;
+    color: #fff; }
+    .btn--red:after,
+    button--red:after {
+      top: -2px;
+      bottom: auto;
+      height: 110%;
+      background: #950741; }
+    .btn--red:hover,
+    button--red:hover {
+      color: #950741; }
+      .btn--red:hover:after,
+      button--red:hover:after {
+        height: 0; }
 
 /* ------------------------------------------------------------ *\ 
     Button Menu
@@ -908,6 +924,8 @@ input[type=number]::-webkit-outer-spin-button {
     .section {
       padding-top: 20px;
       padding-bottom: 60px; } }
+  .section#gamedev .btn {
+    margin-top: 10px; }
   .section:first-of-type:before {
     display: none; }
   .section:before {

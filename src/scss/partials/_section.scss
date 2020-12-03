@@ -16,6 +16,12 @@
         padding-bottom: 60px;
     }
 
+    &#gamedev {
+        .btn {
+            margin-top: 10px;
+        }
+    }
+
     &:first-of-type {
         &:before {
             display: none;
