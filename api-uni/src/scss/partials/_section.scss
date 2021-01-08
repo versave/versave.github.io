@@ -1,0 +1,98 @@
+/* ------------------------------------------------------------ *\ 
+    Section
+\* ------------------------------------------------------------ */
+
+.section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 100px;
+
+    &__head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+        margin-bottom: 40px;
+        background: #222;
+        text-align: center;
+
+        h2 {
+            font-size: 32px;
+            color: #ffffff;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 0;
+            font-size: 30px;
+            list-style: none;
+
+            li {
+                margin: 0 10px;
+
+                &.youtube {
+                    a {
+                        color: red;
+                    }
+                    &:hover,
+                    &.active {
+                        a {
+                            background: red;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                &.unsplash {
+                    a {
+                        color: #000;
+                    }
+                    &:hover,
+                    &.active {
+                        a {
+                            background: #000;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                &.soundcloud {
+                    a {
+                        color: darkorange;
+                    }
+                    &:hover,
+                    &.active {
+                        a {
+                            background: darkorange;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #ffffff;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__inner {
+        flex: 0 1 100%;
+        padding: 40px 0;
+    }
+
+    &__body {
+        flex-grow: 1;
+        background: #ffffff;
+    }
+}
