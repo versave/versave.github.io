@@ -132,9 +132,9 @@ $(document).ready(function () {
   */
 
 
-  $('.search a').on('click', function (e) {
+  $('.search').on('submit', function (e) {
     e.preventDefault();
-    var query = $(this).siblings('input').val();
+    var query = $(this).find('input').val();
     getImages(query);
   });
 

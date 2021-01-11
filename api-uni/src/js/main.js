@@ -63,10 +63,10 @@ $(document).ready(function() {
     /**
     *   Unsplash API 
     */
-    $('.search a').on('click', function(e) {
+    $('.search').on('submit', function(e) {
         e.preventDefault();
 
-        const query = $(this).siblings('input').val();
+        const query = $(this).find('input').val();
 
         getImages(query);
     });
