@@ -27,7 +27,7 @@ $(document).ready(function() {
         part: 'contentDetails',
         forUsername: 'Kurzgesagt',
         key: 'AIzaSyATnzqIcJ92O_jTC5mvXxl2I1xLg8V0XCo',
-    }).done(function(userData) {
+    }).done(userData => {
         const { uploads:pid } = userData.items[0].contentDetails.relatedPlaylists;
         getVideos(pid);
     });
@@ -39,7 +39,7 @@ $(document).ready(function() {
             maxResults: '6',
             playlistId: pid,
             key: 'AIzaSyATnzqIcJ92O_jTC5mvXxl2I1xLg8V0XCo',
-        }).done(function(videoData) {
+        }).done(videoData => {
             appendVideos(videoData.items);
         }); 
     }
@@ -75,7 +75,7 @@ $(document).ready(function() {
         $.get('https://api.unsplash.com/search/photos', {
             query,
             client_id: 'yxnOx6mk-UHiHjy8YkYRCDgj-Iq2EbwF8nynYtz8FCE',
-        }).done(function(imageData) {
+        }).done(imageData => {
             appendImages(imageData.results);
         }); 
     }
